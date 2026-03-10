@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CpsLanding
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
@@ -57,3 +58,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+# cps-landing-page
+Landing page profissional para CPS Engenharia e Construções
+>>>>>>> 738788d4ec1b353045705bcac11bee94023a33b3
