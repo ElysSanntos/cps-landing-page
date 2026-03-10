@@ -1,64 +1,202 @@
-<<<<<<< HEAD
-# CpsLanding
+# CPS Engenharia e Construções — Landing Page
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
+Uma landing page profissional desenvolvida com **Angular** para apresentar os serviços e expertise de engenharia civil e construção.
 
-## Development server
+## 🎯 Sobre o Projeto
 
-To start a local development server, run:
+A **CPS Engenharia e Construções** é uma empresa especializada em soluções de engenharia civil, técnica e construção em Maringá — PR. Esta landing page foi desenvolvida para apresentar o profissional, seus serviços e facilitar o contato direto via WhatsApp.
+
+### Características Principais
+
+- ✅ Design responsivo e moderno
+- ✅ Componentes reutilizáveis em Angular
+- ✅ Integração com WhatsApp para contato direto
+- ✅ Seção "Sobre" com apresentação profissional
+- ✅ Footer com informações de contato
+- ✅ Otimizado para SEO e performance
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+| Tecnologia | Versão | Descrição |
+|---|---|---|
+| **Angular** | 17+ | Framework frontend |
+| **TypeScript** | 5.0+ | Linguagem de programação |
+| **CSS3** | - | Estilização e responsividade |
+| **Node.js** | 20+ | Runtime JavaScript |
+| **npm** | 10+ | Gerenciador de pacotes |
+
+---
+
+## 📦 Pré-requisitos
+
+Antes de começar, certifique-se de ter instalado:
+
+- **Node.js** (v20 ou superior) — [Download](https://nodejs.org/)
+- **npm** (v10 ou superior) — Vem com Node.js
+- **Git** — [Download](https://git-scm.com/)
+- **Angular CLI** (opcional, mas recomendado)
+```bash
+npm install -g @angular/cli
+```
+
+## 🚀 Como Instalar e Rodar Localmente
+
+```
+git clone https://github.com/ElysSanntos/cps-landing-page.git
+cd cps-landing-page
+```
+
+## 2. Instalar Dependências
+
+```bash
+npm install
+```
+
+## 3. Iniciar o Servidor de Desenvolvimento
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Ou, se não tiver Angular CLI instalado:
 
 ```bash
-ng generate component component-name
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 4. Acessar a Aplicação
 
-```bash
-ng generate --help
-```
+Abra seu navegador e acesse:
 
-## Building
+http://localhost:4200
 
-To build the project run:
+A aplicação será recarregada automaticamente quando você fizer alterações nos arquivos.
 
-```bash
-ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### 📁 Estrutura do Projeto
+cps-landing-page/
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── header/
+│   │   │   ├── hero/
+│   │   │   ├── about/
+│   │   │   ├── services/
+│   │   │   └── footer/
+│   │   ├── shared/
+│   │   │   └── whatsapp-float/
+│   │   ├── app.component.ts
+│   │   └── app.component.html
+│   ├── assets/
+│   │   └── images/
+│   ├── styles.css
+│   └── index.html
+├── angular.json
+├── tsconfig.json
+├── package.json
+└── README.md
 
-## Running unit tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### 🎨 Componentes Principais
 
-```bash
+### Header
+Navegação principal da página com links para as seções.
+
+### Hero
+Seção de destaque com chamada para ação (CTA).
+
+### About
+Apresentação profissional com foto e credenciais do engenheiro.
+
+### Services
+Listagem dos serviços oferecidos.
+
+### Footer
+Informações de contato e links úteis.
+
+### WhatsApp Float
+Botão flutuante para contato direto via WhatsApp.
+
+
+## 🔧 Scripts Disponíveis
+````
+# Iniciar servidor de desenvolvimento
+ng serve
+
+# Build para produção
+ng build --configuration production
+
+# Executar testes unitários
 ng test
-```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
+# Executar testes e2e
 ng e2e
+
+# Lint do código
+ng lint
+
+````
+
+## 📱 Responsividade
+
+A landing page é totalmente responsiva e foi testada em:
+✅ Desktop (1920px, 1440px, 1024px)
+✅ Tablet (768px, 834px)
+✅ Mobile (375px, 414px, 480px)
+
+
+## 🌐 Deploy
+Opção 1: Vercel (Recomendado)
 ```
+npm install -g vercel
+vercel
+```
+Opção 2: Netlify
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+```
+npm install -g netlify-cli
+netlify deploy --prod --dir=dist/cps-landing-page
+```
+## 🤝 ContribuiçãoContribuições são bem-vindas! Para contribuir:
 
-## Additional Resources
+Fork o repositório
+Crie uma branch para sua feature (git checkout -b feature/AmazingFeature)
+Commit suas mudanças (git commit -m 'Add some AmazingFeature')
+Push para a branch (git push origin feature/AmazingFeature)
+Abra um Pull Request
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-=======
-# cps-landing-page
-Landing page profissional para CPS Engenharia e Construções
->>>>>>> 738788d4ec1b353045705bcac11bee94023a33b3
+
+## Padrão de Commits
+
+Utilize o padrão Conventional Commits:
+- feat: Adiciona nova feature
+- fix: Corrige um bug
+- docs: Atualiza documentação
+- style: Mudanças de formatação
+- refactor: Refatoração de código
+- test: Adiciona testes
+- chore: Tarefas de manutenção
+
+## 📄 Licença
+
+Este projeto está licenciado sob a MIT License — veja o arquivo LICENSE [blocked] para detalhes.
+
+## 👨‍💻 DesenvolvedorElisVerso — Desenvolvedor Full Stack
+
+- 🔗 GitHub
+
+## 📝 Changelog
+v1.0.0 (10/03/2026)
+ - ✅ Versão inicial da landing page
+ - ✅ Componentes principais implementados
+ - ✅ Responsividade completa
+ - ✅ Integração WhatsApp
+
+
+## 🙏 Agradecimentos
+
+Obrigada por visitar este projeto! Se tiver dúvidas ou sugestões, abra uma Issue ou entre em contato.
+
+Desenvolvido com ❤️ em Maringá
