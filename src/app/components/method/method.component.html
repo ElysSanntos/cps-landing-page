@@ -1,0 +1,29 @@
+<section class="method">
+  <div class="container">
+
+    <div class="method__header">
+      <span class="section-label">Como funciona</span>
+      <h2 class="section-title">
+        O Método <span class="text-laranja">Resolve Certo</span>
+      </h2>
+      <p class="section-sub center">
+        3 passos simples para você ter seu problema resolvido com total tranquilidade.
+      </p>
+    </div>
+
+    <div class="method__steps">
+      @for (step of steps; track step.num; let last = $last) {
+        <div class="method__step">
+          <div class="method__num">{{ step.num }}</div>
+          <div class="method__icon">{{ step.icon }}</div>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.text }}</p>
+        </div>
+        @if (!last) {
+          <div class="method__connector"></div>
+        }
+      }
+    </div>
+
+  </div>
+</section>

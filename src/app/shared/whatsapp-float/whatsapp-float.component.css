@@ -1,0 +1,71 @@
+.wp-float {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 9999;
+  width: 62px;
+  height: 62px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+  animation: bounce 2s infinite;
+  transition: all 0.3s ease;
+}
+
+.wp-float:hover {
+  transform: scale(1.12);
+  box-shadow: 0 10px 40px rgba(37, 211, 102, 0.7);
+}
+
+.wp-float:hover .wp-float__tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ===== TOOLTIP ===== */
+.wp-float__tooltip {
+  position: absolute;
+  right: 72px;
+  background: #1C1C1E;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.wp-float__tooltip::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-right: none;
+  border-left-color: #1C1C1E;
+}
+
+/* ===== BOUNCE ===== */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 600px) {
+  .wp-float {
+    bottom: 20px;
+    right: 20px;
+    width: 54px;
+    height: 54px;
+  }
+}

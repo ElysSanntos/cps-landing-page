@@ -1,0 +1,40 @@
+<section class="urgency">
+  <div class="container">
+
+    <div class="urgency__content">
+      <span class="section-label">Não espere mais</span>
+      <h2 class="section-title">Seu problema está esperando ser resolvido</h2>
+      <p class="urgency__text">
+        Problemas em casa não somem sozinhos. Um fio mal conectado pode virar um curto.
+        Um cano que "quase" vaza vai vazar de vez. Um telhado com goteira vira uma
+        infiltração que destrói a estrutura.
+        <br><br>
+        <strong>Quanto mais você espera, mais caro fica.</strong>
+      </p>
+
+      <div class="urgency__info">
+        @for (item of infos; track item.text) {
+          <div class="urgency__item">
+            <div class="icon-circle">{{ item.icon }}</div>
+            {{ item.text }}
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="urgency__visual">
+      <h3>🟡 Atendimento Disponível Agora</h3>
+      <p>
+        Entre em contato pelo WhatsApp e receba seu orçamento ainda hoje.
+        Sem complicação, sem burocracia.
+      </p>
+      <a [href]="whatsappLink"
+         class="btn-primary"
+         target="_blank"
+         rel="noopener noreferrer">
+        📲 SOLICITAR VISITA AGORA
+      </a>
+    </div>
+
+  </div>
+</section>

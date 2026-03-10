@@ -1,0 +1,24 @@
+<section class="guarantee">
+  <div class="container">
+
+    <div class="guarantee__header">
+      <span class="section-label">Sem riscos para você</span>
+      <h2 class="section-title">Você não corre nenhum risco</h2>
+      <p class="section-sub center">
+        Entendemos que contratar alguém para entrar na sua casa exige confiança.
+        Por isso trabalhamos com total transparência.
+      </p>
+    </div>
+
+    <div class="guarantee__grid">
+      @for (item of guarantees; track item.title) {
+        <div class="guarantee__block">
+          <span class="guarantee__icon">{{ item.icon }}</span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

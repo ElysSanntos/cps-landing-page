@@ -1,0 +1,90 @@
+.footer {
+  background: #0D2440;
+  padding: 72px 0 0;
+}
+
+/* ===== TOP ===== */
+.footer__top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== BRAND ===== */
+.footer__logo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.footer__logo span { color: #F5C518; }
+
+.footer__desc {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  max-width: 320px;
+}
+
+.footer__wp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #F5C518;
+  font-weight: 7px;
+}
+
+/* ===== NAV ===== */
+.footer__nav h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.95);  /* ← Branco bem visível */
+    margin-bottom: 16px;
+    margin-top: 0;
+}
+
+.footer__nav ul li a {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.90); /* era 0.7 */
+  transition: color 0.2s;
+}
+
+.footer__nav ul li a:hover { color: #F5C518; }
+
+/* ===== CONTACT ===== */
+.footer__contact h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);  /* ← Branco bem visível */
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.footer__contact p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.90);
+  margin-bottom: 10px;
+  line-height: 1.5;
+  margin-top: 0;
+}
+
+/* ===== BOTTOM ===== */
+.footer__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* ← Centraliza horizontalmente */
+  justify-content: center;  /* ← Centraliza verticalmente (opcional) */
+  gap: 2px;                 /* ← Espaço entre os parágrafos */
+  text-align: center;       /* ← Garante que o texto dentro do <p> também fica centralizado */
+}
+
+.footer__bottom p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.70);
+  margin: 0;  /* ← Remove margin padrão do <p> */
+}

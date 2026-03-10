@@ -1,0 +1,33 @@
+<section class="services" id="services">
+  <div class="container">
+
+    <div class="services__header">
+      <span class="section-label">O que atendemos</span>
+      <h2 class="section-title">Do pequeno reparo à obra completa</h2>
+      <p class="section-sub center">
+        Não importa o tamanho do problema. Se é na sua casa, Cleiton resolve.
+      </p>
+    </div>
+
+    <div class="services__grid">
+      @for (service of services; track service.title) {
+        <div class="services__card">
+          <div class="services__icon">{{ service.icon }}</div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.text }}</p>
+        </div>
+      }
+    </div>
+
+    <p class="services__footer">
+      💬 Não encontrou seu tipo de problema na lista?
+      <a [href]="whatsappLink"
+         class="link-laranja"
+         target="_blank"
+         rel="noopener noreferrer">
+        Entre em contato — provavelmente Cleiton resolve.
+      </a>
+    </p>
+
+  </div>
+</section>

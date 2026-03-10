@@ -1,1 +1,150 @@
-/* You can add global styles to this file, and also import other style files */
+/* ===== IMPORT FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
+
+/* ===== VARIÁVEIS GLOBAIS ===== */
+:root {
+  --azul:     #1B3A5C;
+  --azul-esc: #0D2440;
+  --laranja:  #E87722;
+  --amarelo:  #F5C518;
+  --areia:    #F7F4EF;
+  --carvao:   #1C1C1E;
+  --branco:   #FFFFFF;
+  --cinza:    #6B7280;
+  --shadow:   0 8px 32px rgba(27, 58, 92, 0.13);
+  --radius:   12px;
+  --trans:    all 0.3s ease;
+}
+
+/* ===== RESET ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--carvao);
+  background: var(--branco);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ===== UTILITÁRIOS ===== */
+.text-laranja  { color: var(--laranja); }
+.text-amarelo  { color: var(--amarelo); }
+.text-branco   { color: var(--branco); }
+.center        { text-align: center; margin: 0 auto; }
+
+.section-label {
+  display: inline-block;
+  color: var(--laranja);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 800;
+  color: var(--azul);
+  margin-bottom: 16px;
+}
+
+.section-sub {
+  font-size: 17px;
+  color: var(--cinza);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* ===== BOTÕES ===== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--amarelo);
+  color: var(--carvao);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 18px 36px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(245, 197, 24, 0.45);
+  transition: var(--trans);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  transform: scale(1.04);
+  box-shadow: 0 10px 32px rgba(245, 197, 24, 0.6);
+}
+
+.btn-primary.btn-white {
+  background: var(--branco);
+  color: var(--laranja);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary.btn-white:hover {
+  box-shadow: 0 14px 48px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== SCROLL REVEAL ===== */
+/* DESATIVADO ATÉ O SERVIÇO SER IMPLEMENTADO */
+/* .reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+} */
+
+/* ===== REVEAL DELAYS ===== */
+/* .reveal:nth-child(1) { transition-delay: 0s; }
+.reveal:nth-child(2) { transition-delay: 0.1s; }
+.reveal:nth-child(3) { transition-delay: 0.2s; }
+.reveal:nth-child(4) { transition-delay: 0.3s; }
+.reveal:nth-child(5) { transition-delay: 0.4s; }
+.reveal:nth-child(6) { transition-delay: 0.5s; }
+.reveal:nth-child(7) { transition-delay: 0.6s; }
+.reveal:nth-child(8) { transition-delay: 0.7s; } */
+
+/* ===== RESPONSIVO BASE ===== */
+@media (max-width: 600px) {
+  .container { padding: 0 20px; }
+}

@@ -1,0 +1,47 @@
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer__top">
+
+      <div class="footer__brand">
+        <div class="footer__logo">CPS <span>Engenharia</span></div>
+        <p class="footer__desc">
+          Engenharia civil e serviços residenciais em Maringá e região.
+          Qualidade, transparência e responsabilidade técnica em cada serviço.
+        </p>
+        <a [href]="whatsappLink"
+           class="footer__wp"
+           target="_blank"
+           rel="noopener noreferrer">
+          📲 (44) 99996-8191
+        </a>
+      </div>
+
+      <div class="footer__nav">
+        <h4>Links Rápidos</h4>
+        <ul>
+          @for (link of links; track link.label) {
+            <li>
+              <a [href]="link.anchor">{{ link.label }}</a>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <div class="footer__contact">
+        <h4>Contato</h4>
+        <p>📍 Maringá — PR</p>
+        <p>📞 (44) 99996-8191</p>
+        <p>✉️ contato&#64;cpsengenharia.com.br</p>
+        <p>⏰ Seg a Sex: 8h às 18h</p>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p>© {{ year }} CPS Engenharia e Construções. Todos os direitos reservados.</p>
+      <p>Desenvolvido por ElisVerso com ❤️ em Maringá</p>
+    </div>
+
+  </div>
+</footer>

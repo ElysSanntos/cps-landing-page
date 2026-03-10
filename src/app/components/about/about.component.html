@@ -1,0 +1,52 @@
+<section class="about">
+  <div class="container">
+
+    <div class="about__photo">
+      <div class="about__photo-img">
+        <div class="about__photo-icon">👷</div>
+        <div class="about__photo-label">
+          <img src="./assets/images/cleiton.jpg"
+          alt="Cleiton - Engenheiro Civil CPS Engenharia"
+          class="about__photo-content"></div>
+      </div>
+      <div class="about__badge-float">
+        <strong>10+</strong>
+        <span>Anos de Experiência</span>
+      </div>
+    </div>
+
+    <div class="about__content">
+      <span class="section-label">Conheça o profissional</span>
+      <h2 class="section-title">Cleiton — CPS Engenharia e Construções</h2>
+
+      <p class="about__text">
+        Cleiton não é um "faz-tudo". Ele é
+        <strong>Engenheiro Civil e Técnico em Eletrotécnica</strong>,
+        com mais de 10 anos de experiência resolvendo problemas reais
+        em residências, apartamentos e obras em Maringá.
+        <br><br>
+        Isso significa que, quando ele avalia um problema na sua casa,
+        ele faz isso com <strong>embasamento técnico, responsabilidade
+        profissional e compromisso com o resultado.</strong>
+        Não é chute. Não é improviso. É engenharia aplicada ao seu dia a dia.
+      </p>
+
+      <div class="about__credentials">
+        @for (item of credentials; track item) {
+          <div class="about__credential">
+            <div class="dot"></div>
+            {{ item }}
+          </div>
+        }
+      </div>
+
+      <a [href]="whatsappLink"
+         class="btn-primary"
+         target="_blank"
+         rel="noopener noreferrer">
+        📲 FALAR COM O CLEITON AGORA
+      </a>
+    </div>
+
+  </div>
+</section>

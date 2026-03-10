@@ -1,0 +1,65 @@
+.problem {
+  background: #F7F4EF;
+  padding: 100px 0;
+}
+
+.problem__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.problem__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+.problem__card {
+  background: #fff;
+  border-radius: 12px;
+  border-left: 4px solid #E87722;
+  padding: 32px 28px;
+  box-shadow: 0 8px 32px rgba(27, 58, 92, 0.13);
+  transition: all 0.3s ease;
+}
+
+.problem__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(27, 58, 92, 0.18);
+}
+
+.problem__emoji {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.problem__card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1B3A5C;
+  margin-bottom: 12px;
+}
+
+.problem__card p {
+  font-size: 15px;
+  color: #6B7280;
+  line-height: 1.7;
+}
+
+.problem__transition {
+  text-align: center;
+  margin-top: 48px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1B3A5C;
+  font-style: italic;
+  padding: 24px;
+  background: #fff;
+  border-radius: 12px;
+  border-top: 3px solid #F5C518;
+  box-shadow: 0 8px 32px rgba(27, 58, 92, 0.13);
+}
+
+@media (max-width: 600px) {
+  .problem { padding: 60px 0; }
+}

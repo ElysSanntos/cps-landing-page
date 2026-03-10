@@ -1,0 +1,38 @@
+<header class="hero">
+  <div class="container">
+
+    <div class="hero__badge">
+      ✅ Orçamento 100% Gratuito — Sem Compromisso
+    </div>
+
+    <h1 class="hero__title">
+      Problemas em Casa Resolvidos com
+      <span class="highlight">Qualidade, Rapidez</span>
+      e a Segurança de Quem É Engenheiro
+    </h1>
+
+    <p class="hero__subtitle">
+      Elétrica, hidráulica, reforma, construção e muito mais —
+      em Maringá e região. Orçamento 100% gratuito e sem compromisso.
+    </p>
+
+    <div class="hero__cta-group">
+      <a [href]="whatsappLink"
+         class="btn-primary"
+         target="_blank"
+         rel="noopener noreferrer">
+        📲 QUERO MEU ORÇAMENTO GRATUITO
+      </a>
+    </div>
+
+    <div class="hero__seals">
+      @for (seal of seals; track seal.text) {
+        <div class="hero__seal">
+          <div class="icon">{{ seal.icon }}</div>
+          {{ seal.text }}
+        </div>
+      }
+    </div>
+
+  </div>
+</header>
