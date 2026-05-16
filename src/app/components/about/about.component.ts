@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
-  whatsappLink = 'https://wa.me/5544999999999?text=Olá%20Cleiton!%20Vi%20seu%20site%20e%20gostaria%20de%20um%20orçamento.';
+  whatsappLink = 'https://wa.me/5544999968191?text=Ol%C3%A1%20Cleiton!%20Gostaria%20de%20falar%20sobre%20um%20servi%C3%A7o.';
 
   credentials = [
     'Engenheiro Civil — CREA registrado',
