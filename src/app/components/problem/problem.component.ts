@@ -24,6 +24,11 @@ export class ProblemComponent {
       emoji: '😟',
       title: 'A insegurança de não saber em quem confiar',
       text: 'Você busca alguém no Google, pede indicação, mas no fundo não sabe se a pessoa tem preparo técnico de verdade — ou se é só mais um "faz-tudo" sem qualificação.'
+    },
+    {
+      emoji: '🛠️',
+      title: 'O serviço pequeno que ninguém quer fazer',
+      text: 'Trocar um chuveiro, arrumar uma tomada, desentupir um ralo. Profissional grande não quer, "faz-tudo" não sabe fazer direito. E você fica sem solução — tendo que aceitar qualquer um.'
     }
   ];
 }
