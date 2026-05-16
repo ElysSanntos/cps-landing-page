@@ -8,14 +8,12 @@
   margin-bottom: 60px;
 }
 
-/* ===== GRID ===== */
 .services__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
 
-/* ===== CARD ===== */
 .services__card {
   background: #fff;
   border-radius: 12px;
@@ -61,25 +59,37 @@
   line-height: 1.6;
 }
 
-/* ===== FOOTER ===== */
 .services__footer {
   text-align: center;
   margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.services__footer-text {
   font-size: 17px;
   font-style: italic;
   color: #1B3A5C;
   font-weight: 600;
+  margin: 0;
 }
 
-.link-laranja {
-  color: #E87722;
-  margin-left: 6px;
-  transition: opacity 0.2s;
+.btn-primary--services {
+  background: #E87722 !important;
+  color: #fff !important;
+  display: inline-block;
+  padding: 14px 36px !important;
+  font-size: 15px !important;
 }
 
-.link-laranja:hover { opacity: 0.75; }
+.btn-primary--services:hover {
+  background: #D0670E !important;
+  transform: scale(1.04);
+  box-shadow: 0 4px 16px rgba(232, 119, 34, 0.4);
+}
 
-/* ===== RESPONSIVO ===== */
 @media (max-width: 992px) {
   .services__grid {
     grid-template-columns: repeat(2, 1fr);

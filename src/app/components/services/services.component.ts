@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './services.component.css'
 })
 export class ServicesComponent {
-  whatsappLink = 'https://wa.me/5544999999999?text=Olá!%20Tenho%20uma%20dúvida%20sobre%20os%20serviços.';
+  whatsappLink = 'https://wa.me/5544999968191?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20engenharia.';
 
   services = [
     {
@@ -35,7 +35,7 @@ export class ServicesComponent {
     {
       icon: '📐',
       title: 'Projetos e Engenharia',
-      text: 'Projeto estrutural, laudos técnicos, ART — responsabilidade de engenheiro.'
+      text: 'Projeto estrutural, laudos / vistorias técnicas, ART — responsabilidade de engenheiro.'
     },
     {
       icon: '🏠',
@@ -49,7 +49,7 @@ export class ServicesComponent {
     },
     {
       icon: '💧',
-      title: 'Limpeza de Caixa d\'Água',
+      title: "Limpeza de Caixa d'Água",
       text: 'Limpeza e higienização conforme normas sanitárias.'
     }
   ];
