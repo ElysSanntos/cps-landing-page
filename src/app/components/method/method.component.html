@@ -14,8 +14,10 @@
     <div class="method__steps">
       @for (step of steps; track step.num; let last = $last) {
         <div class="method__step">
-          <div class="method__num">{{ step.num }}</div>
-          <div class="method__icon">{{ step.icon }}</div>
+          <div class="method__visual">
+            <div class="method__num">{{ step.num }}</div>
+            <div class="method__icon">{{ step.icon }}</div>
+          </div>
           <h3>{{ step.title }}</h3>
           <p>{{ step.text }}</p>
         </div>
