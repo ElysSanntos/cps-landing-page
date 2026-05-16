@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './hero.component.css'
 })
 export class HeroComponent {
-  whatsappLink = 'https://wa.me/5544999968191?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20gratuito.';
+  whatsappLink = 'https://wa.me/5544999968191?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20sem%20compromisso.';
 
   seals = [
     { icon: '🎓', text: 'Engenheiro Civil + Eletrotécnico formado' },
