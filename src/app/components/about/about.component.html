@@ -41,6 +41,22 @@
         }
       </div>
 
+      <!-- ========== COMO TRABALHAMOS ========== -->
+      <div class="about__method">
+        <h3 class="about__method-title">Como trabalhamos</h3>
+        <div class="about__steps">
+          @for (step of steps; track step.title) {
+            <div class="about__step">
+              <div class="about__step-number">{{ step.number }}</div>
+              <div class="about__step-content">
+                <strong>{{ step.title }}</strong>
+                <p>{{ step.text }}</p>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
       <a [href]="whatsappLink"
          class="btn-primary btn-primary--about"
          target="_blank"

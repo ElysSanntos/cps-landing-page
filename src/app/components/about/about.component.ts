@@ -18,4 +18,27 @@ export class AboutComponent {
     'Responsabilidade técnica com ART',
     'Garantia em todos os serviços executados'
   ];
+
+  steps = [
+    {
+      number: '1',
+      title: 'Vistoria',
+      text: 'Vou até o local, avalio o problema pessoalmente e tiro todas as dúvidas.'
+    },
+    {
+      number: '2',
+      title: 'Orçamento',
+      text: 'Apresento o orçamento detalhado por etapa, sem letras miúdas nem surpresas.'
+    },
+    {
+      number: '3',
+      title: 'Execução',
+      text: 'Serviço realizado com técnica, segurança e respeito pelo seu espaço.'
+    },
+    {
+      number: '4',
+      title: 'Entrega',
+      text: 'Tudo limpo, testado e com garantia. Só considero concluído quando você aprova.'
+    }
+  ];
 }

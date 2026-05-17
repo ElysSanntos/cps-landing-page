@@ -19,6 +19,37 @@
       }
     </div>
 
+    <!-- ========== ACORDEÃO — PROBLEMAS REAIS ========== -->
+    <div class="services__problems">
+      <h3 class="services__problems-title">Problemas que resolvemos</h3>
+      <div class="services__accordion">
+        @for (problem of problems; track problem.title; let i = $index) {
+          <details class="services__accordion-item" [open]="i === 0">
+            <summary class="services__accordion-header">
+              <span class="services__accordion-icon">{{ problem.icon }}</span>
+              <span>{{ problem.title }}</span>
+              <span class="services__accordion-arrow">▼</span>
+            </summary>
+            <div class="services__accordion-body">
+              <p>{{ problem.dor }}</p>
+              <p class="services__accordion-solution">
+                <strong>Solução:</strong> {{ problem.solucao }}
+              </p>
+            </div>
+          </details>
+        }
+      </div>
+    </div>
+
+    <!-- ========== BADGE GARANTIA ========== -->
+    <div class="services__guarantee">
+      <span class="services__guarantee-icon">🛡️</span>
+      <div class="services__guarantee-text">
+        <strong>Garantia em todos os serviços</strong>
+        <span>Você só paga quando o serviço for concluído e aprovado.</span>
+      </div>
+    </div>
+
     <div class="services__footer">
       <p class="services__footer-text">
         💬 Não encontrou seu tipo de problema na lista?

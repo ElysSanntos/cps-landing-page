@@ -133,3 +133,49 @@
   .about { padding: 60px 0; }
   .about__photo-img { height: 320px; }
 }
+/* ===== COMO TRABALHAMOS ===== */
+.about__method {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid #e0e0e0;
+}
+.about__method-title {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--cps-dark, #1D293A);
+}
+.about__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.about__step {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.about__step-number {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--cps-orange, #C9A74E);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.about__step-content strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--cps-dark, #1D293A);
+  margin-bottom: 2px;
+}
+.about__step-content p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}

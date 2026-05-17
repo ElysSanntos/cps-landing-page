@@ -102,3 +102,96 @@
     grid-template-columns: 1fr;
   }
 }
+/* ===== ACORDEÃO — PROBLEMAS ===== */
+.services__problems {
+  margin-top: 64px;
+}
+.services__problems-title {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 28px;
+  color: var(--cps-dark, #1D293A);
+}
+.services__accordion {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.services__accordion-item {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+.services__accordion-item[open] {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+.services__accordion-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--cps-dark, #1D293A);
+  list-style: none;
+}
+.services__accordion-header::-webkit-details-marker {
+  display: none;
+}
+.services__accordion-icon {
+  font-size: 1.3rem;
+}
+.services__accordion-arrow {
+  margin-left: auto;
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+  color: var(--cps-orange, #C9A74E);
+}
+.services__accordion-item[open] .services__accordion-arrow {
+  transform: rotate(180deg);
+}
+.services__accordion-body {
+  padding: 0 20px 20px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+}
+.services__accordion-solution {
+  margin-top: 8px;
+  color: var(--cps-dark, #1D293A);
+}
+
+/* ===== BADGE GARANTIA ===== */
+.services__guarantee {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 640px;
+  margin: 48px auto 0;
+  background: linear-gradient(135deg, #f0fdf4, #e6f7ec);
+  padding: 20px 28px;
+  border-radius: 14px;
+  border: 1px solid #bbf7d0;
+}
+.services__guarantee-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+.services__guarantee-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.services__guarantee-text strong {
+  font-size: 1rem;
+  color: #15803d;
+}
+.services__guarantee-text span {
+  font-size: 0.88rem;
+  color: #166534;
+}
