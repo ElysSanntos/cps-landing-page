@@ -16,4 +16,11 @@ export class UrgencyComponent {
     { icon: '📅', text: 'Visita possível no mesmo dia do contato' },
     { icon: '⚡', text: 'Resposta rápida via WhatsApp' }
   ];
+
+  checks = [
+    '✅ Visita gratuita',
+    '✅ Orçamento sem compromisso',
+    '✅ Garantia em tudo',
+    '✅ +10 anos de experiência'
+  ];
 }

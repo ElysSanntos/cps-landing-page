@@ -31,16 +31,23 @@
         <span class="urgency__dot"></span>
         Disponível Agora
       </div>
-      <p>
-        Entre em contato pelo WhatsApp e receba seu orçamento ainda hoje.
-        Sem complicação, sem burocracia.
-      </p>
+
+      <div class="urgency__checks">
+        @for (check of checks; track check) {
+          <div class="urgency__check">{{ check }}</div>
+        }
+      </div>
+
       <a [href]="whatsappLink"
-         class="btn-primary btn-primary--urgency"
+         class="btn-primary"
          target="_blank"
          rel="noopener noreferrer">
-         📋 SOLICITAR VISITA AGORA
+        📋 SOLICITAR VISITA AGORA
       </a>
+
+      <p class="urgency__fine">
+        Sem pressão. Sem compromisso. Só você e a solução do seu problema.
+      </p>
     </div>
 
   </div>
