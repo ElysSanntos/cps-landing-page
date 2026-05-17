@@ -165,33 +165,3 @@
   margin-top: 8px;
   color: var(--cps-dark, #1D293A);
 }
-
-/* ===== BADGE GARANTIA ===== */
-.services__guarantee {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  max-width: 640px;
-  margin: 48px auto 0;
-  background: linear-gradient(135deg, #f0fdf4, #e6f7ec);
-  padding: 20px 28px;
-  border-radius: 14px;
-  border: 1px solid #bbf7d0;
-}
-.services__guarantee-icon {
-  font-size: 2rem;
-  flex-shrink: 0;
-}
-.services__guarantee-text {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.services__guarantee-text strong {
-  font-size: 1rem;
-  color: #15803d;
-}
-.services__guarantee-text span {
-  font-size: 0.88rem;
-  color: #166534;
-}
