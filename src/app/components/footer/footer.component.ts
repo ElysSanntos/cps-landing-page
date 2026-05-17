@@ -9,13 +9,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-  whatsappLink = 'https://wa.me/5544999999999?text=Olá!%20Gostaria%20de%20um%20orçamento.';
-  year = new Date().getFullYear();
-
-  links = [
-    { label: 'Serviços', anchor: '#services' },
-    { label: 'Sobre', anchor: '#about' },
-    { label: 'Depoimentos', anchor: '#testimonials' },
-    { label: 'Contato', anchor: '#contact' }
-  ];
+  whatsappLink = 'https://wa.me/5544999968191?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento.';
+  year = 2026;
 }
