@@ -23,7 +23,7 @@ export class GuaranteeComponent {
     {
       icon: '💬',
       title: 'Orçamento sem Pressão',
-      text: 'A visita é gratuita. O orçamento é gratuito. E você decide na hora que quiser — sem ligações insistentes, sem pressão.'
+      text: 'A visita é sem compromisso.E você decide na hora que quiser — sem ligações insistentes, sem pressão.'
     }
   ];
 }
