@@ -9,12 +9,19 @@ import { CommonModule } from '@angular/common';
   styleUrl: './whatsapp-float.component.css'
 })
 export class WhatsappFloatComponent {
-  whatsappLink = 'https://wa.me/5544999999999?text=Olá!%20Gostaria%20de%20um%20orçamento%20gratuito.';
+  whatsappLink = 'https://wa.me/5544999968191?text=Olá!%20Gostaria%20de%20um%20orçamento%20sem%20compromisso.';
   visible = false;
+  private scrollFn!: () => void;
 
   ngOnInit() {
-    window.addEventListener('scroll', () => {
+    this.scrollFn = () => {
       this.visible = window.scrollY > 400;
-    });
+    };
+    window.addEventListener('scroll', this.scrollFn);
+  }
+
+  ngOnDestroy() {
+    window.removeEventListener('scroll', this.scrollFn);
   }
 }
+
