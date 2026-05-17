@@ -18,9 +18,8 @@ export class UrgencyComponent {
   ];
 
   checks = [
-    '✅ Visita gratuita',
     '✅ Orçamento sem compromisso',
-    '✅ Garantia em tudo',
+    '✅ Garantia',
     '✅ +10 anos de experiência'
   ];
 }
