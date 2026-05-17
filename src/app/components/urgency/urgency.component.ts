@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './urgency.component.css'
 })
 export class UrgencyComponent {
-  whatsappLink = 'https://wa.me/5544999999999?text=Olá%20Cleiton!%20Preciso%20de%20um%20orçamento%20urgente.';
+  whatsappLink = 'https://wa.me/5544999968191?text=Ol%C3%A1%20Cleiton!%20Meu%20problema%20n%C3%A3o%20pode%20esperar.%20Consegue%20me%20atender%20hoje%3F';
 
   infos = [
     { icon: '📍', text: 'Maringá - PR e cidades próximas' },

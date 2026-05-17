@@ -10,12 +10,11 @@
   align-items: center;
 }
 
-/* ===== CONTENT ===== */
 .urgency__text {
   font-size: 16px;
   color: #6B7280;
   line-height: 1.8;
-  margin: 20px 0 32px;
+  margin: 24px 0 32px;
 }
 
 .urgency__info {
@@ -45,7 +44,6 @@
   flex-shrink: 0;
 }
 
-/* ===== VISUAL ===== */
 .urgency__visual {
   background: linear-gradient(135deg, #1B3A5C, #0D2440);
   border-radius: 20px;
@@ -53,13 +51,35 @@
   text-align: center;
   color: #fff;
   box-shadow: 0 20px 60px rgba(27, 58, 92, 0.35);
+  transition: all 0.3s ease;
 }
 
-.urgency__visual h3 {
-  font-size: 22px;
+.urgency__visual:hover {
+  box-shadow: 0 24px 72px rgba(27, 58, 92, 0.45);
+  transform: translateY(-2px);
+}
+
+.urgency__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
   font-weight: 800;
-  color: #F5C518;
+  color: #22C55E;
   margin-bottom: 16px;
+}
+
+.urgency__dot {
+  width: 12px;
+  height: 12px;
+  background: #22C55E;
+  border-radius: 50%;
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
 }
 
 .urgency__visual p {
@@ -69,7 +89,17 @@
   margin-bottom: 28px;
 }
 
-/* ===== RESPONSIVO ===== */
+.btn-primary--urgency {
+  background: #E87722 !important;
+  color: #fff !important;
+}
+
+.btn-primary--urgency:hover {
+  background: #D0670E !important;
+  transform: scale(1.04);
+  box-shadow: 0 4px 16px rgba(232, 119, 34, 0.5);
+}
+
 @media (max-width: 992px) {
   .urgency .container {
     grid-template-columns: 1fr;
@@ -78,4 +108,6 @@
 }
 
 @media (max-width: 600px) {
-  .urgen
+  .urgency { padding: 60px 0; }
+  .urgency__visual { padding: 36px 24px; }
+}
