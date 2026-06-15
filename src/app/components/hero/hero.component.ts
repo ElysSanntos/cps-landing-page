@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+
+import { FacebookPixelService } from '../../shared/facebook-pixel/facebook-pixel.services';
 
 @Component({
   selector: 'app-hero',
@@ -17,4 +19,10 @@ export class HeroComponent {
     { icon: '📍', text: 'Maringá e região' },
     { icon: '🛡️', text: 'Garantia em todos os serviços' }
   ];
+
+  constructor(private pixelService: FacebookPixelService) {}
+
+  trackClick(): void {
+    this.pixelService.trackWhatsappClick('Hero Section');
+  }
 }
