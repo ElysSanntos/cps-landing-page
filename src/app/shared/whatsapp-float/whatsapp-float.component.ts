@@ -1,27 +1,37 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+
+import { FacebookPixelService } from '../facebook-pixel/facebook-pixel.services';
 
 @Component({
   selector: 'app-whatsapp-float',
   standalone: true,
-  imports: [CommonModule],
-  templateUrl: './whatsapp-float.component.html',
-  styleUrl: './whatsapp-float.component.css'
+  template: `
+    <div *ngIf="visible" class="whatsapp-float" (click)="trackClick()">
+      <a href="https://wa.me/your-number" target="_blank">WhatsApp</a>
+    </div>
+  `,
+  styles: [`
+    .whatsapp-float { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
+  `]
 })
-export class WhatsappFloatComponent {
-  whatsappLink = 'https://wa.me/5544999968191?text=Olá!%20Gostaria%20de%20um%20orçamento%20sem%20compromisso.';
-  visible = false;
-  private scrollFn!: () => void;
+export class WhatsappFloatComponent implements OnInit, OnDestroy {
+  visible: boolean = false;
 
-  ngOnInit() {
-    this.scrollFn = () => {
-      this.visible = window.scrollY > 400;
-    };
-    window.addEventListener('scroll', this.scrollFn);
+  constructor(private pixelService: FacebookPixelService) {}
+
+  ngOnInit(): void {
+    window.addEventListener('scroll', this.onScroll);
   }
 
-  ngOnDestroy() {
-    window.removeEventListener('scroll', this.scrollFn);
+  ngOnDestroy(): void {
+    window.removeEventListener('scroll', this.onScroll);
+  }
+
+  private onScroll = (): void => {
+    this.visible = window.scrollY > 100;
+  };
+
+  trackClick(): void {
+    this.pixelService.trackWhatsappClick('Botão Flutuante');
   }
 }
-
