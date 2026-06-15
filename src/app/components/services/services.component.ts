@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FacebookPixelService } from '../../shared/facebook-pixel/facebook-pixel.services';
 
 @Component({
   selector: 'app-services',
@@ -11,6 +12,11 @@ import { CommonModule } from '@angular/common';
 export class ServicesComponent {
   whatsappLink = 'https://wa.me/5544999968191?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20engenharia.';
 
+  constructor(private pixelService: FacebookPixelService) {}
+
+  trackClick(): void {
+    this.pixelService.trackWhatsappClick('Serviços');
+  }
   services = [
     {
       icon: '⚡',

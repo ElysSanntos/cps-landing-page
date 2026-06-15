@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FacebookPixelService } from '../../shared/facebook-pixel/facebook-pixel.services';
 
 @Component({
   selector: 'app-urgency',
@@ -21,4 +22,10 @@ export class UrgencyComponent {
     '✅ Garantia',
     '✅ +10 anos de experiência'
   ];
+
+  constructor(private pixelService: FacebookPixelService) {}
+
+  trackClick(): void {
+    this.pixelService.trackWhatsappClick('Urgência');
+  }
 }

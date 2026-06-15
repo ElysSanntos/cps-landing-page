@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FacebookPixelService } from '../../shared/facebook-pixel/facebook-pixel.services';
 
 @Component({
   selector: 'app-about',
@@ -41,4 +42,10 @@ export class AboutComponent {
       text: 'Tudo limpo, testado e com garantia. Só considero concluído quando você aprova.'
     }
   ];
+
+  constructor(private pixelService: FacebookPixelService){}
+
+  trackClick(): void{
+    this.pixelService.trackWhatsappClick('About');
+  }
 }

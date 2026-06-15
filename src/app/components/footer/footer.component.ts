@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FacebookPixelService } from '../../shared/facebook-pixel/facebook-pixel.services';
 
 @Component({
   selector: 'app-footer',
@@ -13,4 +14,10 @@ export class FooterComponent {
   instagramLink = 'https://www.instagram.com/cps_construcoes_servicos';
   googleReviewLink = 'https://g.page/r/Cd8QZsGbsOjFEAI/review';
   year = 2026;
+
+  constructor(private pixelService: FacebookPixelService){}
+
+  trackClick(): void{
+    this.pixelService.trackWhatsappClick('Footer');
+  }
 }
