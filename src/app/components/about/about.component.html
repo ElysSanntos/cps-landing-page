@@ -3,12 +3,10 @@
 
     <div class="about__photo">
       <div class="about__photo-img">
-        <div class="about__photo-icon">🧑‍🔧</div>
-        <div class="about__photo-label">
-          <img src="./assets/images/cleiton.jpg"
-               alt="Cleiton - Engenheiro Civil CPS Engenharia"
-               class="about__photo-content">
-        </div>
+        <img src="/assets/images/cleiton.jpg"
+             alt="Cleiton - Engenheiro Civil CPS Engenharia"
+             class="about__photo-content"
+             loading="eager">
       </div>
       <div class="about__badge-float">
         <strong>10+</strong>
@@ -17,20 +15,20 @@
     </div>
 
     <div class="about__content">
+      <div class="about__gold-bar"></div>
       <span class="section-label">Conheça o profissional</span>
       <h2 class="section-title">Cleiton — CPS Engenharia e Construções</h2>
 
       <p class="about__text">
-        Cleiton não é um "faz-tudo". Ele é
-        <strong>Engenheiro Civil e Técnico em Eletrotécnica</strong>,
-        com mais de 10 anos de experiência resolvendo problemas reais
-        em residências, apartamentos e obras em Maringá.
-        <br><br>
-        Isso significa que, quando ele avalia um problema na sua casa,
-        ele faz isso com <strong>embasamento técnico, responsabilidade
-        profissional e compromisso com o resultado.</strong>
-        Não é chute. Não é improviso. É engenharia aplicada ao seu dia a dia.
+        Cleiton é <strong>Engenheiro Civil e Técnico em Eletrotécnica</strong>.
+        Há mais de 10 anos resolve problemas reais em residências e obras em Maringá
+        — com embasamento técnico, responsabilidade profissional e compromisso com o resultado.
       </p>
+
+      <div class="about__highlight">
+        <div class="about__highlight-line"></div>
+        <span><strong>Não é chute. Não é improviso.</strong> É engenharia aplicada ao seu dia a dia, com ART registrada e garantia em cada serviço.</span>
+      </div>
 
       <div class="about__credentials">
         @for (item of credentials; track item) {
@@ -41,8 +39,8 @@
         }
       </div>
 
-      <!-- ========== COMO TRABALHAMOS ========== -->
       <div class="about__method">
+        <div class="about__gold-line"></div>
         <h3 class="about__method-title">Como trabalhamos</h3>
         <div class="about__steps">
           @for (step of steps; track step.title) {
@@ -57,13 +55,6 @@
         </div>
       </div>
 
-      <a [href]="whatsappLink"
-         class="btn-primary btn-primary--about"
-         target="_blank"
-         rel="noopener noreferrer"
-         (click)="trackClick()">
-        💬 FALAR COM O CLEITON AGORA
-      </a>
     </div>
 
   </div>

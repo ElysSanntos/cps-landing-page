@@ -10,7 +10,7 @@ import { FacebookPixelService } from '../../shared/facebook-pixel/facebook-pixel
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
-  whatsappLink = 'https://wa.me/5544999968191?text=Ol%C3%A1%20Cleiton!%20Gostaria%20de%20falar%20sobre%20um%20servi%C3%A7o.';
+  whatsappLink = 'https://wa.me/5544999968191?text=Ol%C3%A1%20Cleiton!%20Gostaria%20de%20agendar%20uma%20consultoria%20t%C3%A9cnica%20para%20avaliar%20um%20problema.';
 
   credentials = [
     'Engenheiro Civil — CREA registrado',
