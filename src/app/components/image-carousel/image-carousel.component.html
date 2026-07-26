@@ -1,0 +1,39 @@
+<div class="image-carousel">
+  <div class="image-carousel__wrapper">
+    <div class="image-carousel__track"
+                [style.transform]="'translateX(-' + activeSlide * 100 + '%)'"
+                [style.transition]="skipTransition ? 'none' : 'transform 0.4s ease'">
+      @for (slide of slides; track slide; let i = $index) {
+        <div class="image-carousel__slide">
+          @if (slide.imageUrl) {
+            <img [src]="slide.imageUrl" [alt]="slide.alt" [loading]="i === 0 ? 'eager' : 'lazy'">
+                    } @else {
+            <div class="image-carousel__placeholder">
+              <span>📷</span>
+              <p>{{ slide.label }}</p>
+            </div>
+          }
+        </div>
+      }
+    </div>
+
+    @if (slides.length > 1) {
+      <button class="image-carousel__arrow image-carousel__arrow--prev"
+              (click)="prev()" aria-label="Imagem anterior">‹</button>
+      <button class="image-carousel__arrow image-carousel__arrow--next"
+              (click)="next()" aria-label="Próxima imagem">›</button>
+    }
+  </div>
+
+  @if (slides.length > 1) {
+    <div class="image-carousel__controls">
+      <div class="image-carousel__dots">
+        @for (slide of slides; track slide; let i = $index) {
+          <button class="image-carousel__dot" [class.active]="i === activeSlide"
+                  (click)="goTo(i)" [attr.aria-label]="'Imagem ' + (i + 1)"></button>
+        }
+      </div>
+      <span class="image-carousel__indicator">{{ activeSlide + 1 }} / {{ slides.length }}</span>
+    </div>
+  }
+</div>

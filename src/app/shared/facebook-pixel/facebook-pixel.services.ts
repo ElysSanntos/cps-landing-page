@@ -19,24 +19,29 @@ export class FacebookPixelService {
   }
 
   private initPixel(): void {
-    if (typeof window !== 'undefined' && !(window as any).fbq) {
-      const f = (window as any);
-      f.fbq = function() {
-        f.fbq.callMethod ? f.fbq.callMethod.apply(f.fbq, arguments) : f.fbq.queue.push(arguments);
-      };
-      f.fbq.push = f.fbq;
-      f.fbq.loaded = true;
-      f.fbq.version = '2.0';
-      f.fbq.queue = [];
+    if (typeof window === 'undefined') return;
 
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = 'https://connect.facebook.net/en_US/fbevents.js';
-      document.head.appendChild(script);
+    // JÁ TEM SCRIPT NO DOM? → não adiciona de novo
+    if (document.querySelector('script[src*="fbevents"]')) return;
+    if ((window as any).fbq) return;
 
-      fbq('init', this.PIXEL_ID);
-      fbq('track', 'PageView');
-    }
+    const f = window as any;
+    f.fbq = function() {
+      f.fbq.callMethod ? f.fbq.callMethod.apply(f.fbq, arguments) : f.fbq.queue.push(arguments);
+    };
+    if (!f._fbq) f._fbq = f.fbq;
+    f.fbq.push = f.fbq;
+    f.fbq.loaded = true;
+    f.fbq.version = '2.0';
+    f.fbq.queue = [];
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://connect.facebook.net/en_US/fbevents.js';
+    document.head.appendChild(script);
+
+    fbq('init', this.PIXEL_ID);
+    // PageView NÃO está aqui — só pelo roteador
   }
 
   private trackPageViews(): void {

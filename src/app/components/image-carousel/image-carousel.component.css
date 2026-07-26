@@ -1,0 +1,149 @@
+.image-carousel {
+  text-align: center;
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.image-carousel__wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.image-carousel__track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.image-carousel__slide {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F0EFEC;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.image-carousel__slide img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  display: block;
+}
+
+.image-carousel__placeholder {
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+}
+
+.image-carousel__placeholder span {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.image-carousel__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid rgba(212, 175, 55, 0.3);
+  color: #D4AF37;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.image-carousel__arrow:hover {
+  background: #fff;
+  border-color: #D4AF37;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.25);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.image-carousel__arrow--prev {
+  left: 8px;
+}
+
+.image-carousel__arrow--next {
+  right: 8px;
+}
+
+.image-carousel__controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.image-carousel__dots {
+  display: flex;
+  gap: 8px;
+}
+
+.image-carousel__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #D4D0C8;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+
+.image-carousel__dot.active {
+  background: #D4AF37;
+  width: 24px;
+  border-radius: 4px;
+}
+
+.image-carousel__indicator {
+  font-size: 12px;
+  color: #999;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .image-carousel__slide {
+    height: 280px;
+  }
+
+  .image-carousel__arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .image-carousel__arrow--prev {
+    left: 4px;
+  }
+
+  .image-carousel__arrow--next {
+    right: 4px;
+  }
+}
+
+@media (max-width: 600px) {
+  .image-carousel__slide {
+    height: 220px;
+  }
+
+  .image-carousel__arrow {
+    display: none;
+  }
+}
