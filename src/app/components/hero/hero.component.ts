@@ -11,7 +11,7 @@ import { FacebookPixelService } from '../../shared/facebook-pixel/facebook-pixel
   styleUrl: './hero.component.css'
 })
 export class HeroComponent {
-  whatsappLink = 'https://wa.me/5544999968191?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20sem%20compromisso.';
+  whatsappLink = 'https://wa.me/5544999968191?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consultoria%20t%C3%A9cnica%20com%20a%20CPS%20Engenharia.';
 
   seals = [
     { icon: '🎓', text: 'Engenheiro Civil + Eletrotécnico formado' },

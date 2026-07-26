@@ -9,7 +9,7 @@
     center / cover no-repeat;
   display: flex;
   align-items: center;
-  padding: 140px 0 80px;
+  padding: 100px 0 50px;
   position: relative;
 }
 
@@ -28,83 +28,128 @@
   text-align: center;
 }
 
+/* BADGE — Dourado com glow girando igual ao /cartão */
 .hero__badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(232, 119, 34, 0.2);
-  border: 1.5px solid #E87722;
-  color: #F5C518;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(255, 215, 0, 0.08));
+  border: 1.5px solid #D4AF37;
+  color: #FFD700;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 13px;
-  padding: 8px 20px;
+  font-size: 12px;
+  padding: 7px 18px;
   border-radius: 100px;
-  margin-bottom: 28px;
-  animation: pulse 2.5s infinite;
+  margin-bottom: 20px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  animation: goldenSpin 3s ease-in-out infinite;
+  background-size: 300% 100%;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
 }
 
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(232, 119, 34, 0.4); }
-  50%       { box-shadow: 0 0 0 10px rgba(232, 119, 34, 0); }
+@keyframes goldenSpin {
+  0%   { background-position: 0% 50%; box-shadow: 0 0 8px rgba(212, 175, 55, 0.15); }
+  50%  { background-position: 100% 50%; box-shadow: 0 0 16px rgba(212, 175, 55, 0.4); }
+  100% { background-position: 0% 50%; box-shadow: 0 0 8px rgba(212, 175, 55, 0.15); }
 }
 
+/* TÍTULO */
 .hero__title {
-  font-size: clamp(30px, 5vw, 56px);
+  font-size: clamp(24px, 3.8vw, 42px);
   font-weight: 900;
   color: #fff;
-  line-height: 1.15;
-  max-width: 820px;
-  margin: 0 auto 20px;
+  line-height: 1.2;
+  max-width: 800px;
+  margin: 0 auto 14px;
 }
 
-.hero__title .highlight { color: #F5C518; }
+.hero__title .highlight {
+  color: #fff;
+}
 
+/* SUBTÍTULO */
 .hero__subtitle {
-  font-size: clamp(16px, 2vw, 19px);
+  font-size: clamp(13px, 1.6vw, 16px);
   color: rgba(255, 255, 255, 0.82);
-  max-width: 580px;
-  margin: 0 auto 36px;
-  line-height: 1.6;
+  max-width: 540px;
+  margin: 0 auto 24px;
+  line-height: 1.5;
 }
 
 .hero__cta-group {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 48px;
+  gap: 12px;
+  margin-bottom: 32px;
 }
 
+/* BOTÃO PRINCIPAL — Dourado com glow */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 2px solid #D4AF37;
+  color: #FFD700;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 13px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+  animation: goldenSpin 3s ease-in-out infinite;
+  background-size: 300% 100%;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(255, 215, 0, 0.12));
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+  transform: translateY(-2px);
+}
+
+/* SELOS — NA MESMA LINHA */
 .hero__seals {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
-  gap: 24px;
+  gap: 16px;
 }
 
 .hero__seal {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 14px;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 12px;
   font-weight: 500;
+  white-space: nowrap;
 }
 
+/* ✅ BOLINHAS CORRIGIDAS — fundo mais claro, ícone visível */
 .hero__seal .icon {
-  width: 26px; height: 26px;
-  background: #E87722;
+  width: 22px; height: 22px;
+  background: rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(212, 175, 55, 0.4);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 11px;
   flex-shrink: 0;
+  color: #FFD700;
 }
 
-@media (max-width: 600px) {
-  .hero__seals { gap: 12px; }
+@media (max-width: 768px) {
+  .hero { padding: 80px 0 40px; }
+  .hero__seals { flex-wrap: wrap; gap: 8px; }
+  .hero__seal { font-size: 11px; }
+  .btn-primary { font-size: 11px; padding: 10px 20px; }
 }
