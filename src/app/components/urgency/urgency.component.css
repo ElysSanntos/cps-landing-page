@@ -1,193 +1,265 @@
+/* ===== SEÇÃO ===== */
 .urgency {
-  background: linear-gradient(135deg, #E87722 0%, #c45e0f 100%);
-  padding: 100px 0;
-  position: relative;
-  overflow: hidden;
-}
-
-.urgency::before {
-  content: '';
-  position: absolute;
-  top: -100px;
-  left: -100px;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  pointer-events: none;
-}
-
-.urgency::after {
-  content: '';
-  position: absolute;
-  bottom: -80px;
-  right: -80px;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  pointer-events: none;
+  background: #fff;
+  padding: 48px 0;
+  border-top: 1px solid rgba(212, 167, 67, 0.15);
 }
 
 .urgency .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 72px;
+  gap: 32px;
   align-items: center;
-  position: relative;
-  z-index: 1;
 }
 
-/* ===== LADO ESQUERDO (TEXTO NO LARANJA) ===== */
+/* ===== LABEL / TITLE ===== */
+.urgency .section-label {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #D4A743;
+  margin-bottom: 4px;
+}
 
-.urgency__content .section-label {
+.urgency .section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 900;
   color: #1B3A5C;
+  line-height: 1.2;
+  margin: 0 0 10px;
 }
 
-.urgency__content .section-title {
-  color: #fff;
+/* ===== GOLD BAR ===== */
+.urgency__gold-bar {
+  position: relative;
+  width: 130px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #D4A743 15%, #D4A743 85%, transparent 100%);
+  border-radius: 2px;
+  margin-bottom: 8px;
+  overflow: hidden;
 }
 
+.urgency__gold-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.8) 60%, transparent 100%);
+  animation: urgencyShimmer 2.5s ease-in-out infinite;
+}
+
+@keyframes urgencyShimmer {
+  0%   { left: -60%; }
+  50%  { left: 110%; }
+  100% { left: 110%; }
+}
+
+/* ===== TEXTO ===== */
 .urgency__sub {
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.85);
-  margin: 16px 0 24px;
-  line-height: 1.6;
+  font-size: 14px;
+  font-weight: 700;
+  color: #E87722;
+  margin: 0 0 12px;
+  line-height: 1.5;
 }
 
 .urgency__text {
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.88);
-  line-height: 1.8;
-  margin: 0 0 32px;
+  font-size: 13px;
+  color: #6B7280;
+  line-height: 1.6;
+  margin: 0 0 20px;
 }
 
 .urgency__text strong {
-  color: #fff;
+  color: #1B3A5C;
 }
 
+/* ===== INFO ITEMS COM GLOW PULSANTE ===== */
 .urgency__info {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
 }
 
 .urgency__item {
   display: flex;
   align-items: center;
-  gap: 14px;
-  font-size: 15px;
+  gap: 12px;
+  font-size: 13px;
   font-weight: 600;
   color: #1B3A5C;
 }
 
-.icon-circle {
-  width: 40px;
-  height: 40px;
-  background: #fff;
+.urgency__dot {
+  width: 8px;
+  height: 8px;
+  background: #D4A743;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
   flex-shrink: 0;
+  animation: dotGlow 2s ease-in-out infinite;
 }
 
-/* ===== LADO DIREITO (CARD ESCURO) ===== */
+@keyframes dotGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 4px rgba(212, 167, 67, 0.3),
+      0 0 8px rgba(212, 167, 67, 0.1);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow:
+      0 0 8px rgba(212, 167, 67, 0.6),
+      0 0 16px rgba(212, 167, 67, 0.3),
+      0 0 24px rgba(212, 167, 67, 0.1);
+    transform: scale(1.1);
+  }
+}
 
+/* ===== CARD DIREITO ===== */
 .urgency__visual {
-  background: linear-gradient(135deg, #1B3A5C, #0D2440);
-  border-radius: 20px;
-  padding: 48px 36px;
+  background: linear-gradient(145deg, #1B3A5C, #0D2440);
+  border-radius: 16px;
+  padding: 36px 32px;
   text-align: center;
   color: #fff;
-  box-shadow: 0 20px 60px rgba(27, 58, 92, 0.35);
-  transition: all 0.3s ease;
+  border: 1.5px solid rgba(212, 167, 67, 0.25);
+  box-shadow:
+    0 12px 40px rgba(27, 58, 92, 0.3),
+    0 0 15px rgba(212, 167, 67, 0.08);
+  transition: all 0.4s ease;
 }
 
 .urgency__visual:hover {
-  box-shadow: 0 24px 72px rgba(27, 58, 92, 0.45);
+  box-shadow:
+    0 16px 48px rgba(27, 58, 92, 0.4),
+    0 0 25px rgba(212, 167, 67, 0.15);
+  border-color: rgba(212, 167, 67, 0.4);
   transform: translateY(-2px);
 }
 
+/* ===== BADGE DISPONÍVEL ===== */
 .urgency__badge {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 800;
   color: #22C55E;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
-.urgency__dot {
-  width: 12px;
-  height: 12px;
+.urgency__dot-pulse {
+  width: 10px;
+  height: 10px;
   background: #22C55E;
   border-radius: 50%;
-  animation: pulse-dot 1.8s ease-in-out infinite;
+  animation: dotPulse 1.8s ease-in-out infinite;
 }
 
-@keyframes pulse-dot {
+@keyframes dotPulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.5; transform: scale(0.85); }
 }
 
+/* ===== CHECKS ===== */
 .urgency__checks {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 28px;
-  padding-left: 40px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
 }
 
 .urgency__check {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 15px;
+  font-weight: 600;
+  font-size: 14px;
   color: rgba(255, 255, 255, 0.9);
 }
 
-.btn-primary {
-  background: #E87722;
+.urgency__check::before {
+  content: '✓ ';
+  color: #22C55E;
+  font-weight: 700;
+}
+
+/* ===== BOTÃO PRINCIPAL ===== */
+.urgency__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(212, 167, 67, 0.12);
   color: #fff;
-  padding: 16px 40px;
-  border-radius: 8px;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
-  font-size: 15px;
+  font-size: 12px;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s ease;
+  border-radius: 22px;
+  padding: 12px 28px;
+  border: 1.5px solid rgba(212, 167, 67, 0.5);
   cursor: pointer;
-  border: none;
+  transition: all 0.4s ease;
+  white-space: nowrap;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.15),
+    0 0 12px rgba(212, 167, 67, 0.15);
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.btn-primary:hover {
-  background: #D0670E;
-  transform: scale(1.04);
-  box-shadow: 0 4px 16px rgba(232, 119, 34, 0.5);
+.urgency__btn:hover {
+  background: rgba(212, 167, 67, 0.25);
+  border-color: rgba(212, 167, 67, 0.8);
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    0 0 20px rgba(212, 167, 67, 0.4),
+    0 0 50px rgba(212, 167, 67, 0.15);
 }
 
+.urgency__btn:active {
+  transform: translateY(0);
+  background: rgba(212, 167, 67, 0.18);
+}
+
+/* ===== FINE PRINT ===== */
 .urgency__fine {
-  margin-top: 20px;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
+  margin-top: 16px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
   font-style: italic;
+  line-height: 1.4;
 }
 
+/* ===== RESPONSIVO ===== */
 @media (max-width: 992px) {
+  .urgency { padding: 36px 0; }
   .urgency .container {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 28px;
   }
+  .urgency .section-title { font-size: 18px; }
+  .urgency__visual { padding: 28px 24px; }
 }
 
 @media (max-width: 600px) {
-  .urgency { padding: 60px 0; }
-  .urgency__visual { padding: 36px 24px; }
-  .urgency__checks { padding-left: 20px; }
+  .urgency { padding: 28px 0; }
+  .urgency .section-title { font-size: 16px; }
+  .urgency__sub { font-size: 13px; }
+  .urgency__text { font-size: 12px; }
+  .urgency__visual { padding: 24px 18px; }
+  .urgency__btn { font-size: 11px; padding: 10px 20px; }
+  .urgency__badge { font-size: 16px; }
 }

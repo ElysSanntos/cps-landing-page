@@ -2,6 +2,7 @@
   <div class="container">
 
     <div class="urgency__content">
+      <div class="urgency__gold-bar"></div>
       <span class="section-label">Não espere mais</span>
       <h2 class="section-title">Seu problema está esperando ser resolvido</h2>
       <p class="urgency__sub">
@@ -19,7 +20,7 @@
       <div class="urgency__info">
         @for (item of infos; track item.text) {
           <div class="urgency__item">
-            <div class="icon-circle">{{ item.icon }}</div>
+            <div class="urgency__dot"></div>
             {{ item.text }}
           </div>
         }
@@ -28,7 +29,7 @@
 
     <div class="urgency__visual">
       <div class="urgency__badge">
-        <span class="urgency__dot"></span>
+        <span class="urgency__dot-pulse"></span>
         Disponível Agora
       </div>
 
@@ -39,11 +40,11 @@
       </div>
 
       <a [href]="whatsappLink"
-         class="btn-primary"
+         class="urgency__btn"
          target="_blank"
          rel="noopener noreferrer"
          (click)="trackClick()">
-        📋 SOLICITAR VISITA AGORA
+        Solicitar visita agora
       </a>
 
       <p class="urgency__fine">
