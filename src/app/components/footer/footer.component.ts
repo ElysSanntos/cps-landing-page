@@ -10,14 +10,14 @@ import { FacebookPixelService } from '../../shared/facebook-pixel/facebook-pixel
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-  whatsappLink = 'https://wa.me/5544999968191?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento%20sem%20compromisso.';
+  whatsappLink = 'https://wa.me/5544999968191?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20da%20CPS%20Engenharia.';
   instagramLink = 'https://www.instagram.com/cps_construcoes_servicos';
   googleReviewLink = 'https://g.page/r/Cd8QZsGbsOjFEAI/review';
   year = 2026;
 
-  constructor(private pixelService: FacebookPixelService){}
+  constructor(private pixelService: FacebookPixelService) {}
 
-  trackClick(): void{
+  trackClick(): void {
     this.pixelService.trackWhatsappClick('Footer');
   }
 }
