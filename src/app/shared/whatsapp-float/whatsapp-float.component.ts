@@ -10,7 +10,7 @@ import { FacebookPixelService } from '../facebook-pixel/facebook-pixel.services'
   styleUrl: './whatsapp-float.component.css'
 })
 export class WhatsappFloatComponent implements OnInit, OnDestroy {
-  whatsappLink = 'https://wa.me/5544999968191?text=Olá!%20Gostaria%20de%20um%20orçamento%20sem%20compromisso.';
+  whatsappLink = 'https://wa.me/5544999968191?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20da%20CPS%20Engenharia.';
   visible = false;
   private scrollFn!: () => void;
 

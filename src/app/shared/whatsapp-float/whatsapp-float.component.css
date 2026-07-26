@@ -13,6 +13,32 @@
   box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
   animation: bounce 2s infinite;
   transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* ===== GLOW DOURADO PULSANTE ===== */
+.wp-float::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: #D4A743;
+  opacity: 0;
+  z-index: -1;
+  animation: floatGlow 2s ease-in-out infinite;
+}
+
+@keyframes floatGlow {
+  0%, 100% {
+    opacity: 0.25;
+    filter: blur(8px);
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    filter: blur(14px);
+    transform: scale(1.15);
+  }
 }
 
 .wp-float:hover {
