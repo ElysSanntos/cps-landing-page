@@ -1,5 +1,6 @@
 /* ===== SEÇÃO ===== */
 .about {
+  scroll-margin-top: 70px;
   background: #fff;
   padding: 24px 0;
 }
@@ -96,7 +97,7 @@
   left: 0;
 }
 
-/* ===== BADGE 10+ — GLOW PULSA POR FORA, TEXTO PARADO ===== */
+/* ===== BADGE 10+ ===== */
 .about__badge-float {
   position: absolute;
   bottom: 12px;
@@ -161,7 +162,7 @@
   margin: 0 0 8px;
 }
 
-/* ===== HIGHLIGHT COM LINHA VERTICAL ===== */
+/* ===== HIGHLIGHT ===== */
 .about__highlight {
   display: flex;
   align-items: flex-start;

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FacebookPixelService } from '../../shared/facebook-pixel/facebook-pixel.services';
+import { Component, HostListener } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -10,11 +10,30 @@ import { FacebookPixelService } from '../../shared/facebook-pixel/facebook-pixel
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  whatsappLink = 'https://wa.me/5544999968191?text=Olá!%20Gostaria%20de%20fazer%20um%20orçamento%20sem%20compromisso.';
+  menuOpen = false;
+  scrolled = false;
 
-  constructor(private pixelService: FacebookPixelService) {}
+  constructor(private scroller: ViewportScroller) {}
 
-  trackClick(): void {
-    this.pixelService.trackWhatsappClick('Navbar');
+  @HostListener('window:scroll')
+  onScroll(): void {
+    this.scrolled = window.scrollY > 50;
+  }
+
+  toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+    document.body.style.overflow = this.menuOpen ? 'hidden' : '';
+  }
+
+  closeMenu(): void {
+    this.menuOpen = false;
+    document.body.style.overflow = '';
+  }
+
+  scrollTo(section: string): void {
+    this.closeMenu();
+    setTimeout(() => {
+      this.scroller.scrollToAnchor(section);
+    }, 150);
   }
 }
