@@ -335,17 +335,23 @@
 @media (max-width: 992px) {
   .about { padding: 20px 0; }
   .about .container { grid-template-columns: 1fr; gap: 20px; }
-  .about__photo { min-height: 220px; }
-  .about__photo-img { min-height: 220px; }
+  .about__photo { min-height: 280px; }
+  .about__photo-img { min-height: 280px; }
   .about__badge-float { bottom: 10px; right: 10px; }
   .about__badge-float strong { font-size: 18px; }
+  .about__photo-content {
+    object-position: center 50%;
+  }
 }
 
 @media (max-width: 600px) {
   .about { padding: 16px 0; }
-  .about__photo { min-height: 180px; }
-  .about__photo-img { min-height: 180px; }
+  .about__photo { min-height: 240px; }
+  .about__photo-img { min-height: 240px; }
   .about .section-title { font-size: 16px; }
   .about__text { font-size: 12px; }
   .about__highlight { font-size: 11px; padding: 5px 8px; }
+  .about__photo-content {
+    object-position: center 50%;
+  }
 }
