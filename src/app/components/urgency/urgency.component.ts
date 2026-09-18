@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+
 import { FacebookPixelService } from '../../shared/facebook-pixel/facebook-pixel.services';
 
 @Component({
@@ -27,5 +28,9 @@ export class UrgencyComponent {
 
   trackClick(): void {
     this.pixelService.trackWhatsappClick('Urgência');
+    // Conversão Google Ads — clique no WhatsApp
+    if (typeof (window as any).gtag === 'function') {
+      (window as any).gtag('event', 'conversion', { send_to: 'AW-17838804791/RLcQCOyEw_wcELeemrpC' });
+    }
   }
 }

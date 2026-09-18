@@ -1,5 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+
 import { FacebookPixelService } from '../facebook-pixel/facebook-pixel.services';
 
 @Component({
@@ -25,6 +26,10 @@ export class WhatsappFloatComponent implements OnInit, OnDestroy {
 
   trackClick(): void {
     this.pixelService.trackWhatsappClick('Botão Flutuante');
+    // Conversão Google Ads — clique no WhatsApp
+    if (typeof (window as any).gtag === 'function') {
+      (window as any).gtag('event', 'conversion', { send_to: 'AW-17838804791/RLcQCOyEw_wcELeemrpC' });
+    }
   }
 
   ngOnDestroy() {

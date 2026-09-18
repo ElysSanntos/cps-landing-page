@@ -21,6 +21,10 @@ export class ServicesComponent {
 
   trackClick(): void {
     this.pixelService.trackWhatsappClick('Serviços');
+    // Conversão Google Ads — clique no WhatsApp
+    if (typeof (window as any).gtag === 'function') {
+      (window as any).gtag('event', 'conversion', { send_to: 'AW-17838804791/RLcQCOyEw_wcELeemrpC' });
+    }
   }
 
   services = [
