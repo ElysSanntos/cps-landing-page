@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+
+import { CAROUSEL_SLIDES } from '../../data/carousel-slides';
 import { FacebookPixelService } from '../../shared/facebook-pixel/facebook-pixel.services';
 import { ImageCarouselComponent } from '../image-carousel/image-carousel.component';
-import { CAROUSEL_SLIDES } from '../../data/carousel-slides';
 
 @Component({
   selector: 'app-services',
@@ -30,7 +31,9 @@ export class ServicesComponent {
     { icon: '📐', title: 'Projetos e Engenharia', text: 'Projeto estrutural, laudos / vistorias técnicas, ART.' },
     { icon: '🏠', title: 'Construção do Zero', text: 'Fundação, estrutura, alvenaria — sua obra nas mãos certas.' },
     { icon: '🚿', title: 'Reparos Residenciais', text: 'Troca de chuveiro, consertos gerais, telhado, substituições.' },
-    { icon: '💧', title: "Limpeza de Caixa d'Água", text: 'Limpeza e higienização conforme normas sanitárias.' }
+    { icon: '💧', title: "Limpeza de Caixa d'Água", text: 'Limpeza e higienização conforme normas sanitárias.' },
+    { icon: '⚡', title: 'Poste Padrão COPEL', text: 'Venda e instalação completa do poste padrão de entrada de energia, dentro da norma da concessionária. Poste fornecido, instalado e pronto para a vistoria — sem dor de cabeça.' },
+    { icon: '📋', title: 'Regularização de Imóvel', text: 'Regularização de construções e imóveis junto à prefeitura e órgãos competentes. Projetos, laudos e documentação para legalizar sua obra com responsabilidade técnica.' }
   ];
 
   problems = [
