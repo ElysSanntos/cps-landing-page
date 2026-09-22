@@ -41,7 +41,6 @@ export class FacebookPixelService {
     document.head.appendChild(script);
 
     fbq('init', this.PIXEL_ID);
-    // PageView NÃO está aqui — só pelo roteador
   }
 
   private trackPageViews(): void {
@@ -60,6 +59,14 @@ export class FacebookPixelService {
         content_name: 'WhatsApp Click',
         content_category: origem,
         location: window.location.href
+      });
+    }
+
+    // ➕ NOVO (P2): evento GA4 whatsapp_click com a origem do botão
+    if (typeof (window as any).gtag === 'function') {
+      (window as any).gtag('event', 'whatsapp_click', {
+        origem: origem,
+        page_location: window.location.href
       });
     }
   }
