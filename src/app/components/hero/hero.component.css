@@ -1,155 +1,162 @@
-.hero {
-  min-height: 100vh;
-  background:
-    linear-gradient(160deg,
-      rgba(13, 36, 64, 0.92) 0%,
-      rgba(27, 58, 92, 0.82) 60%,
-      rgba(13, 36, 64, 0.95) 100%),
-    url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80')
-    center / cover no-repeat;
-  display: flex;
-  align-items: center;
-  padding: 100px 0 50px;
-  position: relative;
-}
+/* ============================================
+   HERO — CPS Engenharia
+   [PERF 23/09/2026] Imagem externa Unsplash removida
+   (ficava ~93% oculta pelo gradiente).
+   Fundo 100% CSS = paint imediato, LCP sem espera.
+   ============================================ */
+   .hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #0D2440 0%, #1B3A5C 60%, #0D2440 100%);
+    background-color: #0D2440; /* cor sólida: pinta antes do gradiente carregar */
+    display: flex;
+    align-items: center;
+    padding: 100px 0 50px;
+    position: relative;
+  }
 
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: -2px; left: 0; right: 0;
-  height: 80px;
-  background: #F7F4EF;
-  clip-path: polygon(0 100%, 100% 100%, 100% 0);
-}
+  /* Brilho dourado sutil — 100% CSS, 0 KB de imagem */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 55% 45% at 72% 18%, rgba(212, 175, 55, 0.12), transparent 65%),
+      radial-gradient(ellipse 45% 40% at 18% 82%, rgba(255, 215, 0, 0.07), transparent 60%);
+    pointer-events: none;
+  }
 
-.hero .container {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-}
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0; right: 0;
+    height: 80px;
+    background: #F7F4EF;
+    clip-path: polygon(0 100%, 100% 100%, 100% 0);
+  }
 
-/* BADGE — Dourado com glow girando igual ao /cartão */
-.hero__badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(255, 215, 0, 0.08));
-  border: 1.5px solid #D4AF37;
-  color: #FFD700;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 12px;
-  padding: 7px 18px;
-  border-radius: 100px;
-  margin-bottom: 20px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  animation: goldenSpin 3s ease-in-out infinite;
-  background-size: 300% 100%;
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
-}
+  .hero .container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
 
-@keyframes goldenSpin {
-  0%   { background-position: 0% 50%; box-shadow: 0 0 8px rgba(212, 175, 55, 0.15); }
-  50%  { background-position: 100% 50%; box-shadow: 0 0 16px rgba(212, 175, 55, 0.4); }
-  100% { background-position: 0% 50%; box-shadow: 0 0 8px rgba(212, 175, 55, 0.15); }
-}
+  /* BADGE — Dourado com glow girando igual ao /cartão */
+  .hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(255, 215, 0, 0.08));
+    border: 1.5px solid #D4AF37;
+    color: #FFD700;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 7px 18px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+  }
 
-/* TÍTULO */
-.hero__title {
-  font-size: clamp(24px, 3.8vw, 42px);
-  font-weight: 900;
-  color: #fff;
-  line-height: 1.2;
-  max-width: 800px;
-  margin: 0 auto 14px;
-}
+  /* glow mais suave: anima só no hover (menos repaint no LCP) */
+  .hero__badge:hover {
+    box-shadow: 0 0 16px rgba(212, 175, 55, 0.4);
+  }
 
-.hero__title .highlight {
-  color: #fff;
-}
+  /* TÍTULO — elemento LCP */
+  .hero__title {
+    font-size: clamp(24px, 3.8vw, 42px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.2;
+    max-width: 800px;
+    margin: 0 auto 14px;
+  }
 
-/* SUBTÍTULO */
-.hero__subtitle {
-  font-size: clamp(13px, 1.6vw, 16px);
-  color: rgba(255, 255, 255, 0.82);
-  max-width: 540px;
-  margin: 0 auto 24px;
-  line-height: 1.5;
-}
+  .hero__title .highlight {
+    color: #fff;
+  }
 
-.hero__cta-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 32px;
-}
+  /* SUBTÍTULO */
+  .hero__subtitle {
+    font-size: clamp(13px, 1.6vw, 16px);
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 540px;
+    margin: 0 auto 24px;
+    line-height: 1.5;
+  }
 
-/* BOTÃO PRINCIPAL — Dourado com glow */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: transparent;
-  border: 2px solid #D4AF37;
-  color: #FFD700;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 13px;
-  padding: 13px 28px;
-  border-radius: 50px;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
-  animation: goldenSpin 3s ease-in-out infinite;
-  background-size: 300% 100%;
-}
+  .hero__cta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
 
-.btn-primary:hover {
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(255, 215, 0, 0.12));
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
-  transform: translateY(-2px);
-}
+  /* BOTÃO PRINCIPAL — Dourado com glow */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    border: 2px solid #D4AF37;
+    color: #FFD700;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 13px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+  }
 
-/* SELOS — NA MESMA LINHA */
-.hero__seals {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  gap: 16px;
-}
+  .btn-primary:hover {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(255, 215, 0, 0.12));
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    transform: translateY(-2px);
+  }
 
-.hero__seal {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 12px;
-  font-weight: 500;
-  white-space: nowrap;
-}
+  /* SELOS — NA MESMA LINHA */
+  .hero__seals {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 16px;
+  }
 
-/* ✅ BOLINHAS CORRIGIDAS — fundo mais claro, ícone visível */
-.hero__seal .icon {
-  width: 22px; height: 22px;
-  background: rgba(212, 175, 55, 0.2);
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  flex-shrink: 0;
-  color: #FFD700;
-}
+  .hero__seal {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
 
-@media (max-width: 768px) {
-  .hero { padding: 80px 0 40px; }
-  .hero__seals { flex-wrap: wrap; gap: 8px; }
-  .hero__seal { font-size: 11px; }
-  .btn-primary { font-size: 11px; padding: 10px 20px; }
-}
+  /* BOLINHAS — fundo mais claro, ícone visível */
+  .hero__seal .icon {
+    width: 22px; height: 22px;
+    background: rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    flex-shrink: 0;
+    color: #FFD700;
+  }
+
+  @media (max-width: 768px) {
+    .hero { padding: 80px 0 40px; }
+    .hero__seals { flex-wrap: wrap; gap: 8px; }
+    .hero__seal { font-size: 11px; }
+    .btn-primary { font-size: 11px; padding: 10px 20px; }
+  }
