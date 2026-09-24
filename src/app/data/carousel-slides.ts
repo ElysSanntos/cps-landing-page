@@ -1,13 +1,18 @@
 export interface CarouselSlide {
   imageUrl: string;
-  alt: string;
   label: string;
+  alt: string;
+  width: number;
+  height: number;
 }
 
-export const CAROUSEL_SLIDES: CarouselSlide[] = [
-  { imageUrl: '/assets/images/carrossel/p1.webp', alt: 'Trabalho 1', label: 'Trabalho 1' },
-  { imageUrl: '/assets/images/carrossel/p2.webp', alt: 'Trabalho 2', label: 'Trabalho 2' },
-  { imageUrl: '/assets/images/carrossel/p3.webp', alt: 'Trabalho 3', label: 'Trabalho 3' },
-  { imageUrl: '/assets/images/carrossel/p4.webp', alt: 'Trabalho 4', label: 'Trabalho 4' },
-  { imageUrl: '/assets/images/carrossel/p5.webp', alt: 'Trabalho 5', label: 'Trabalho 5' },
+const slides: CarouselSlide[] = [
+  { imageUrl: 'assets/images/carrossel/p1.webp', label: 'Trabalho 1',   alt: 'Trabalho 1',   width: 768, height: 1376 },
+  { imageUrl: 'assets/images/carrossel/p2.webp', label: 'Trabalho 2',   alt: 'Trabalho 2',   width: 768, height: 1376 },
+  { imageUrl: 'assets/images/carrossel/p3.webp', label: 'Trabalho 3',   alt: 'Trabalho 3',   width: 768, height: 1376 },
+  { imageUrl: 'assets/images/carrossel/p4.webp', label: 'Trabalho 4',   alt: 'Trabalho 4',   width: 768, height: 1376 },
+  { imageUrl: 'assets/images/carrossel/p5.webp', label: 'Trabalho 5',   alt: 'Trabalho 5',   width: 864, height: 1536 },
 ];
+
+export const carouselSlides: CarouselSlide[] = slides;
+export const CAROUSEL_SLIDES: CarouselSlide[] = slides;

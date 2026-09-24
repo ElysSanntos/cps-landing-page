@@ -6,7 +6,9 @@
       @for (slide of slides; track slide; let i = $index) {
         <div class="image-carousel__slide">
           @if (slide.imageUrl) {
-            <img [src]="slide.imageUrl" [alt]="slide.alt" [loading]="i === 0 ? 'eager' : 'lazy'">
+            <img [src]="slide.imageUrl" [alt]="slide.alt"
+            [width]="slide.width" [height]="slide.height"
+            [loading]="i === 0 ? 'eager' : 'lazy'">
                     } @else {
             <div class="image-carousel__placeholder">
               <span>📷</span>
