@@ -103,23 +103,18 @@
   background: #D4A743;
   border-radius: 50%;
   flex-shrink: 0;
-  animation: dotGlow 2s ease-in-out infinite;
 }
 
-@keyframes dotGlow {
-  0%, 100% {
-    box-shadow:
-      0 0 4px rgba(212, 167, 67, 0.3),
-      0 0 8px rgba(212, 167, 67, 0.1);
-    transform: scale(1);
-  }
-  50% {
-    box-shadow:
-      0 0 8px rgba(212, 167, 67, 0.6),
-      0 0 16px rgba(212, 167, 67, 0.3),
-      0 0 24px rgba(212, 167, 67, 0.1);
-    transform: scale(1.1);
-  }
+.urgency__dot { position: relative; }
+.urgency__dot::after {
+  content: ''; position: absolute; inset: -8px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,175,55,.5), transparent 65%);
+  animation: dotGlowFade 2s ease-in-out infinite;
+  pointer-events: none; z-index: -1;
+}
+@keyframes dotGlowFade {
+  0%, 100% { opacity: .3; }
+  50%      { opacity: 1; }
 }
 
 /* ===== CARD DIREITO ===== */
