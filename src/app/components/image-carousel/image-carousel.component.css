@@ -96,14 +96,14 @@
 }
 
 .image-carousel__dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #D4D0C8;
-  transition: all 0.3s ease;
-  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  background: transparent;
   border: none;
-  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .image-carousel__dot.active {
@@ -113,9 +113,17 @@
 }
 
 .image-carousel__indicator {
-  font-size: 12px;
-  color: #999;
-  letter-spacing: 0.5px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1B3A5C66; /* visível sobre fotos claras e escuras */
+}
+
+a[href^="mailto"] {
+  display: inline-block;
+  min-height: 44px;
+  padding: 12px 0;
 }
 
 @media (max-width: 768px) {
