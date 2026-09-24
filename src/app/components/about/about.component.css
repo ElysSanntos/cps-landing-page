@@ -48,8 +48,6 @@
   content: '';
   position: absolute;
   top: 0;
-  left: -60%;
-  width: 60%;
   height: 100%;
   background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.8) 60%, transparent 100%);
   animation: goldShimmer 2.5s ease-in-out infinite;
@@ -203,8 +201,6 @@
 .about__highlight-line::after {
   content: '';
   position: absolute;
-  top: -60%;
-  left: 0;
   width: 100%;
   height: 60%;
   background: linear-gradient(
@@ -218,9 +214,8 @@
 }
 
 @keyframes highlightShimmer {
-  0%   { top: -60%; }
-  50%  { top: 110%; }
-  100% { top: 110%; }
+  0%        { transform: translateY(-100%); }
+  50%, 100% { transform: translateY(183%); }
 }
 
 /* ===== CREDENCIAIS ===== */
@@ -268,8 +263,6 @@
 .about__gold-line::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: -60%;
   width: 60%;
   height: 100%;
   background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.8) 60%, transparent 100%);
@@ -277,9 +270,8 @@
 }
 
 @keyframes goldShimmer {
-  0%   { left: -60%; }
-  50%  { left: 110%; }
-  100% { left: 110%; }
+  0%        { transform: translateX(-100%); }
+  50%, 100% { transform: translateX(183%); }
 }
 
 .about__method-title {
