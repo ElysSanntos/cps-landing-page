@@ -11,11 +11,41 @@ export class FacebookPixelService {
   private readonly PIXEL_ID = '1536234664542465';
 
   constructor(private router: Router) {
-    this.initPixel();
+    // [PERF 24/09/2026] Pixel NÃO carrega mais no bootstrap:
+    // só dispara no 1º gesto do usuário (scroll/clique/toque/tecla).
+    // Tira ~189 KiB do caminho crítico sem perder o Lead (ver trackWhatsappClick).
+    this.loadPixelOnInteraction();
   }
 
   public initRouteTracking(): void {
     this.trackPageViews();
+  }
+
+  /** Aguarda o 1º gesto do usuário para carregar o fbevents.js */
+  private loadPixelOnInteraction(): void {
+    if (typeof window === 'undefined') return;
+    if (this.isPixelLoaded()) return;
+
+    const onInteraction = () => {
+      this.ensurePixelLoaded();
+    };
+
+    ['scroll', 'click', 'touchstart', 'keydown'].forEach((eventName) => {
+      window.addEventListener(eventName, onInteraction, { once: true, passive: true });
+    });
+  }
+
+  /** Garante o pixel carregado + PageView na 1ª interação (ou no Lead) */
+  private ensurePixelLoaded(): void {
+    if (this.isPixelLoaded()) return;
+    this.initPixel();
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'PageView');
+    }
+  }
+
+  private isPixelLoaded(): boolean {
+    return !!document.querySelector('script[src*="fbevents"]') || !!(window as any).fbq;
   }
 
   private initPixel(): void {
@@ -54,6 +84,10 @@ export class FacebookPixelService {
   }
 
   public trackWhatsappClick(origem: string): void {
+    // [PERF 24/09/2026] Se o pixel ainda não carregou (visitante
+    // clicou sem gesto prévio), inicializa NA HORA para NUNCA perder o Lead.
+    this.ensurePixelLoaded();
+
     if (typeof fbq !== 'undefined') {
       fbq('track', 'Lead', {
         content_name: 'WhatsApp Click',
@@ -62,7 +96,7 @@ export class FacebookPixelService {
       });
     }
 
-    // ➕ NOVO (P2): evento GA4 whatsapp_click com a origem do botão
+    // GA4 (P2): evento whatsapp_click com a origem do botão
     if (typeof (window as any).gtag === 'function') {
       (window as any).gtag('event', 'whatsapp_click', {
         origem: origem,
